@@ -1,0 +1,231 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.instantweatherapplication</groupId>
+  <artifactId>instantweatherapplication</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>instantweatherapplication Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+   <properties>
+  	<jdk.version>1.8</jdk.version>
+  	<spring.version>4.3.11.RELEASE</spring.version>
+  	<hsqldb.version>2.3.2</hsqldb.version>
+  	<h2db.version>1.4.187</h2db.version>
+  	<derbydb.version>10.11.1.1</derbydb.version>
+  	<logback.version>1.1.3</logback.version>
+  	<jcl.slf4j.version>1.7.12</jcl.slf4j.version>
+  	<jstl.version>1.2</jstl.version>
+  	<servlet.api>3.1.0</servlet.api>
+  	<junit.version>4.12</junit.version>
+  	<dbcp.version>2.1</dbcp.version>
+  </properties>
+  
+  <dependencies>
+  
+  	<!-- JUnit (Pruebas unitarias de test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- Spring Core -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring.version}</version>
+      <!-- 
+      		No meter las dependencias commons-logging 
+      		porque el sistema de log lo vamos a implementar
+      		nosotros
+      -->
+    </dependency>
+    
+    <!-- Spring Web MVC -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+ 		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${spring.version}</version>
+	</dependency>
+    
+    <!-- Spring Web -->
+    
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+    
+    
+    <!-- Spring Expressions para expresiones EL -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+   		 <groupId>mysql</groupId>
+   	 	<artifactId>mysql-connector-java</artifactId>
+    	<version>5.1.6</version>
+	</dependency>
+	
+	
+	  	  	<!-- Dependencia Spring JSON -->
+  	<dependency>
+  		<groupId>com.fasterxml.jackson.core</groupId>
+  		<artifactId>jackson-databind</artifactId>
+  		<version>2.8.7</version>
+  	</dependency>
+
+  	
+  	  	  	  	<!-- Dependencia Spring JSON -->
+  	<dependency>
+  		<groupId>com.fasterxml.jackson.datatype</groupId>
+  		<artifactId>jackson-datatype-jsr310</artifactId>
+  		<version>2.8.7</version>
+  	</dependency>
+	
+    
+    <!-- Spring JDBC para BBDD -->
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>${spring.version}</version>
+</dependency>
+
+    
+    <!-- Spring Test para pruebas de codigo -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    
+    <!-- HyperSQL BBDD -->
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>${hsqldb.version}</version>
+    </dependency>
+    
+    <!-- H2 BBDD -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>${h2db.version}</version>
+    </dependency>
+    
+    <!-- Derby BBDD -->
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derby</artifactId>
+      <version>${derbydb.version}</version>
+    </dependency>
+    
+    <!-- Pool conexiones a BBDD -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-dbcp2</artifactId>
+      <version>${dbcp.version}</version>
+    </dependency>
+    
+    <!-- Sistema de LOG -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${jcl.slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    
+    <!-- JSTL -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${jstl.version}</version>
+    </dependency>
+    
+    <dependency>
+  		<groupId>taglibs</groupId>
+  		<artifactId>standard</artifactId>
+  		<version>1.1.2</version>
+  	</dependency>
+  	
+  		  	 	  	  	  	<!-- Dependencia Spring JSON -->
+  	<dependency>
+  		<groupId>com.rometools</groupId>
+  		<artifactId>rome</artifactId>
+  		<version>1.8.0</version>
+  	</dependency>
+  	
+    
+    
+    <!-- Servlets Java -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet.api}</version>
+      <scope>provided</scope>
+    </dependency>
+    
+  </dependencies>
+  
+  <build>
+    <finalName>instantweatherapplication</finalName>
+    
+    <plugins>
+    	<!-- Para Maven -->
+    	<plugin>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-compiler-plugin</artifactId>
+    		<version>3.3</version>
+    		<configuration>
+    			<source>${jdk.version}</source>
+    			<target>${jdk.version}</target>
+    		</configuration>
+    	</plugin>
+    	
+    	<!-- Para Jetty (servidor web embebido) -->
+    	<plugin>
+    		<groupId>org.eclipse.jetty</groupId>
+    		<artifactId>jetty-maven-plugin</artifactId>
+    		<version>9.2.11</version>
+    		<configuration>
+    			<scanIntervalSeconds>30</scanIntervalSeconds>
+    			<webApp>
+    				<contextPath>/proyecto</contextPath>
+    			</webApp>
+    		</configuration>
+    	</plugin>
+    	
+    	<!-- Para configurar workspace de Eclipse -->
+    	<plugin>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-eclipse-plugin</artifactId>
+    		<version>2.9</version>
+    		<configuration>
+    			<downloadSources>true</downloadSources>
+    			<downloadJavadocs>true</downloadJavadocs>
+    			<wtpversion>2.0</wtpversion>
+    			<wtpContextName>proyecto</wtpContextName>
+    		</configuration>
+    	</plugin>
+    	
+    </plugins>
+    
+  </build>
+
+</project>
