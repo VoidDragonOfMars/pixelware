@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
-//import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.weatherapp.exceptions.TwoUserFoundException;
@@ -44,10 +43,10 @@ public class UserDaoJdbcImpl  extends JdbcDaoSupport implements UserDaoInterface
 			user.setReports(this.reportService.getAllReportsByIdUser(user.getId()));
 		} catch (EmptyResultDataAccessException emptyResultDataAccessException) {
 			if(emptyResultDataAccessException.getActualSize() == 0) {
-				throw new UserNotFoundException("No se encuentra registrado");
+				throw new UserNotFoundException("This user is not registered");
 			} 
 		} catch ( IncorrectResultSizeDataAccessException incorrectResultSizeDataAccessException) {
-			throw new TwoUserFoundException("Estos datos ya se encuentran registrados, por favor , cambie el nombre o la contraseña");
+			throw new TwoUserFoundException("this user is already registered, Please, change your name or password");
 		}
 		
 		

@@ -15,16 +15,16 @@
 	<h1 class="bg-primary text-white">Weather Instant Service</h1>
 	
 	<div class="panel"><hr>
-		<p>Felicidades!!! te has registado como usuario con los siguientes datos:</p>
+		<p>Congratulations!!! You are noy register with this data:</p>
 		<ul>
-			<li><label >Nombre: ${newUser.name}</label></li>
+			<li><label >Name: ${newUser.name}</label></li>
 			<li><label >Email: ${newUser.email}</label></li>
-			<li><label >País: ${newUser.country}</label></li>
-			<li><label>Fecha: ${newUser.date}</label></li>
+			<li><label >Country: ${newUser.country}</label></li>
+			<li><label>Date: ${newUser.date}</label></li>
 		</ul>
 	</div>
 	<hr>
-	<div>Ahora ya puedes consultar el tiempo en cualquier ciudad pulsando <a href ="/instantweatherapplication">aquí</a></div>
+	<div>Now you can query the temperature of all countries in the world <a href ="/instantweatherapplication">here</a></div>
 	<script type="text/javascript" src="resources/scripts/jquery-3.2.1.min.js"></script>
 
 

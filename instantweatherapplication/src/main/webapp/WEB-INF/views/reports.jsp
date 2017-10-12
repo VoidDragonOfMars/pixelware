@@ -20,7 +20,7 @@
 		<div class="col-sm-4">
 			<table class ="panel">
 				<tr>
-					<td><strong>Bienvenido ${userLogin.name}</strong></td>
+					<td><strong>Welcome ${userLogin.name}</strong></td>
 				</tr>
 				<tr>
 					<td>Sign out <a href="/instantweatherapplication/logout">here</a></td>
@@ -30,13 +30,13 @@
 			<table class="panel">
 				<form:form method="post" modelAttribute="report" action="/instantweatherapplication/getReport" id="formReport">
 					<tr>
-						<td><label >Ciudad</label>
+						<td><label >City</label>
 						<td><form:input path="city" class="autocomplete" id="cities"/>
 						<form:errors class="bg-danger text-white" path="city"/></td>
 					</tr>
 					<tr>
 						<td></td>
-						<td><input class="btn-primary" type="submit" value="Obtener Pronóstico"></td>
+						<td><input class="btn-primary" type="submit" value="Get Temperature"></td>
 					</tr>
 		
 				</form:form>
@@ -51,8 +51,8 @@
 			<div class="col-sm-4" class="panel">
 				<table class="table">
 					<thead>
-						<th>Ciudad</th>
-						<th>Temperatura</th>
+						<th>City</th>
+						<th>Temperature</th>
 					</thead>
 					<tbody>
 						<c:forEach items="${userLogin.reports}" var="report">

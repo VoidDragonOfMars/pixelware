@@ -80,7 +80,7 @@ public class MainController {
 		
 		reportService.addReport(report);
 		user.setReports(reportService.getAllReportsByIdUser(user.getId()));
-		String mensaje = "La temperatura en " + report.getCity() +  " es de " + report.getTemperature() + "ºC";
+		String mensaje = "The temperature in " + report.getCity() +  " is " + report.getTemperature() + "ºC";
 		model.addAttribute("mensaje", mensaje);
 		return "reports";
 	}
